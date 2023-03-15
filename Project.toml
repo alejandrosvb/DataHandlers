@@ -1,0 +1,7 @@
+name = "DataHandlers"
+uuid = "f3464759-e2a0-4e7f-bffd-8f5e3bbcd6db"
+authors = ["= <=>"]
+version = "0.1.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
