@@ -17,7 +17,7 @@ end
 
 function from_df_to_X(df::DataFrame)
     matrix = Matrix(df)
-    array = reshape(matrix, (n_tickers, 1, length(X_columns), n_days))
+    array = reshape(matrix, (nrow(df), 1, ncol(df)))
     return Float32.(array)
 end
 
