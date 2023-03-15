@@ -19,6 +19,13 @@ function from_df_to_X(df::DataFrame, X_columns::Array, X_tickers::Union{Array, N
     end
 end
 
+function from_df_to_X(df::DataFrame)
+    matrix = Matrix(df)
+    array = reshape(matrix, (n_tickers, 1, length(X_columns), n_days))
+    return Float32.(array)
+end
+
+
 function from_df_to_y(df::DataFrame, y_columns::Array, y_ticker::String)
     dataframe = filter(row -> row.ticker == y_ticker, df)
     dataframe = dataframe[!, y_columns]
